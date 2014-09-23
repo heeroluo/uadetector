@@ -2,7 +2,7 @@
 
 /*!
  * UA Detector
- * The 'uadetect' command - v0.1.0 (2014-09-23T14:15:56+0800)
+ * The 'uadetect' command - v0.1.0 (2014-09-23T18:02:09+0800)
  * Released under LGPL license
  */
 
@@ -34,7 +34,7 @@ var commands = {
 		var metaData = fs.readFileSync( path.resolve(__dirname, '../package.json') );
 		if (metaData) {
 			metaData = JSON.parse(metaData);
-			console.info('Version: v' + metaData.version);
+			return 'Version: v' + metaData.version;
 		}
 	},
 
