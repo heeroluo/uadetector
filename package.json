@@ -13,14 +13,11 @@
 	"preferGlobal": true,
 	"repository": {
 		"type": "git",
-		"url": ""
+		"url": "https://github.com/heeroluo/uadetector"
 	},
 	"keywords": [
 		"useragent"
 	],
-	"dependencies": {
-
-	},
 	"license": "LGPL",
 	"engines": {
 		"node": ">=0.10.0"
