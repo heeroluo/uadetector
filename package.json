@@ -1,5 +1,5 @@
 {
-	"name": "ua detector",
+	"name": "uadetector",
 	"version": "0.1.0",
 	"description": "A program used to analyse useragent string",
 	"author": {
