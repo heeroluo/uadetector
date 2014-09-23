@@ -1,0 +1,28 @@
+{
+	"name": "ua detector",
+	"version": "0.1.0",
+	"description": "A program used to analyse useragent string",
+	"author": {
+		"name": "Heero Luo",
+		"email": "heeroluo@gmail.com",
+		"url": "http://heeroluo.net/"
+	},
+	"bin" : {
+		"uadetect": "./bin/uadetect"
+	},
+	"preferGlobal": true,
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"keywords": [
+		"useragent"
+	],
+	"dependencies": {
+
+	},
+	"license": "LGPL",
+	"engines": {
+		"node": ">=0.10.0"
+	}
+}

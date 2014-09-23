@@ -1,0 +1,78 @@
+#!/usr/bin/env node
+
+/*!
+ * UA Detector
+ * The 'uadetect' command - v0.1.0 (2014-09-23T14:15:56+0800)
+ * Released under LGPL license
+ */
+
+// 命令行参数 -> Map
+var commandArgs = (function() {
+	var lastParamName, autoId = 0, args = { };
+	process.argv.slice(2).forEach(function(arg) {
+		if ( /^-(.+)$/.test(arg) ) {
+			lastParamName = RegExp.$1;
+			args[lastParamName] = true;
+		} else {
+			if (lastParamName) {
+				args[lastParamName] = arg;
+				lastParamName = null;
+			} else {
+				args[autoId++] = arg;
+			}
+		}
+	});
+
+	return args;
+})();
+
+
+var commands = {
+	v: function() {
+		var path = require('path'), fs = require('fs');
+
+		var metaData = fs.readFileSync( path.resolve(__dirname, '../package.json') );
+		if (metaData) {
+			metaData = JSON.parse(metaData);
+			console.info('Version: v' + metaData.version);
+		}
+	},
+
+	device: function(ua) {
+		var device = require('../device');
+		return device.exec(ua);
+	},
+
+	os: function(ua) {
+		var os = require('../os');
+		return os.exec(ua);
+	},
+
+	browsercore: function(ua) {
+		var browserCore = require('../browsercore');
+		return browserCore.exec(ua);
+	},
+
+	browser: function(ua) {
+		var browser = require('../browser');
+		return browser.exec(ua);
+	}
+};
+
+
+var uaString = commandArgs[0], outputFormat = commandArgs['format'], result;
+for (var cmd in commands) {
+	if (commandArgs[cmd]) {
+		result = commands[cmd](uaString, outputFormat);
+		if (typeof result === 'string') {
+			console.info(result);
+		} else {
+			result.type = cmd;
+			console.info(
+				outputFormat ? outputFormat.replace(/%([a-zA-Z]+)/g, function(match, $1) {
+					return result[$1];
+				}) : JSON.stringify(result)
+			);
+		}
+	}
+}
