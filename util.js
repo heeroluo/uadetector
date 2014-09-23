@@ -1,11 +1,11 @@
 /*!
  * UA Detector
- * Utility functions - v0.1.0 (2014-09-23T14:37:17+0800)
+ * Utility functions - v0.1.0 (2014-09-23T17:49:51+0800)
  * Released under LGPL license
  */
 
 function fixVersion(ver, segments) {
-	if ( !segments || !/^\d+(?:\.\d+)*\.*$/.test(ver) ) { return ver; }
+	if ( !segments || !/^\d+(?:\.\d+)*$/.test(ver) ) { return ver; }
 
 	ver = ver.toString().split('.');
 	if (ver.length > segments) {
@@ -33,6 +33,7 @@ exports.execRules = function(ua, rules, versionSegments) {
 					// 把版本号分隔符统一为点号
 					ver = ver.replace(/_/g, '.');
 				}
+				if (ver) { ver = ver.replace(/\.+$/, ''); }
 			}
 
 			var verNum = parseFloat(ver);

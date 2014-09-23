@@ -1,6 +1,6 @@
 {
 	"name": "uadetector",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "A program used to analyse useragent string",
 	"author": {
 		"name": "Heero Luo",

@@ -1,6 +1,6 @@
 /*!
  * UA Detector
- * Browser detect - v0.1.0 (2014-09-23T14:35:25+0800)
+ * Browser detect - v0.1.0 (2014-09-23T17:59:17+0800)
  * Released under LGPL license
  */
 
@@ -11,19 +11,20 @@ var util = require('./util'),
 
 var pcRules = [
 	{ name: 'QQ浏览器', rule: /\bQQBrowser(?:\/(\d+\.\d+))?/i, ranges: [ [0, 7] ] },
-	{ name: '猎豹浏览器', rule: /\bLBBROWSER\b/i },
 	{ name: '傲游浏览器', rule: /\bMaxthon(?:[\/\s](\d+\.\d+))?/i, ranges: [ [0, 4] ] },
 	{ name: '世界之窗', rule: /\bTheWorld(?:\s([\d.]+))?/i },
 	{ name: '搜狗浏览器', rule: /\bSE\b/ },
-	{ name: 'GreenBrowser', rule: /\bGreenBrowser\b/i },
 	{ name: '2345王牌浏览器', rule: /\b2345Explorer(?:\s(\d+\.\d+))?/ },
-	{ name: '百度浏览器', rule: /\bbaidubrowser\b/i }
+	{ name: '猎豹浏览器', rule: /\bLBBROWSER\b/i },
+	{ name: '百度浏览器', rule: /\b(?:baidubrowser|BIDUBrowser)(?:[\/\s]([\d.]+))?\b/i, ranges: [ [0, 6] ] },
+	{ name: 'UC浏览器', rule: /\bUBrowser\/([\d.]+)/, ranges: [ [0, 3] ] },
+	{ name: 'GreenBrowser', rule: /\bGreenBrowser\b/i },
 ].concat(browserCore.pcRules);
 
 var mobileRules = [
 	{ name: '微信 (APP)', rule: /\bMicroMessenger\/([\d.]+)/, ranges: [ [0, 5] ] },
-	{ name: 'UC浏览器', rule: /\b(?:UCBrowser|UCWEB)(?:-CMCC)?\/?\s?([\d.]+)/, ranges: [ [0, 8] ] },
-	{ name: 'UC浏览器', rule: /\bUC\b/ },
+	{ name: 'UC浏览器 (Mobile)', rule: /\b(?:UCBrowser|UCWEB)(?:-CMCC)?\/?\s?([\d.]+)/, ranges: [ [0, 8] ] },
+	{ name: 'UC浏览器 (Mobile)', rule: /\bUC\b/ },
 	{ name: 'QQ浏览器 (Mobile)', rule: /\bMQQBrowser\/(\d+\.\d+)?/, ranges: [ [0, 4] ] },
 	{ name: 'QQ (APP)', rule: /\bQQ\/([\d.]+)/, ranges: [ [0, 4] ] },
 	{ name: 'QQ (APP)', rule: /\bIPadQQ\b/ },
