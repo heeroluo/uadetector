@@ -1,6 +1,6 @@
 /*!
  * UA Detector
- * Device detect - v0.1.0 (2014-09-23T14:47:44+0800)
+ * Device brand detect - v0.1.0 (2014-09-24T09:15:12+0800)
  * Released under LGPL license
  */
 
@@ -223,6 +223,6 @@ exports.exec = function(ua) {
 	} else {
 		result = util.execRules(ua, otherRules);
 	}
-	result.type = 'device';
+	result.type = 'devicebrand';
 	return result;
 };

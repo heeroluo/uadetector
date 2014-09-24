@@ -2,7 +2,7 @@
 
 /*!
  * UA Detector
- * The 'uadetect' command - v0.1.0 (2014-09-23T18:02:09+0800)
+ * The 'uadetect' command - v0.1.0 (2014-09-24T09:15:37+0800)
  * Released under LGPL license
  */
 
@@ -38,8 +38,8 @@ var commands = {
 		}
 	},
 
-	device: function(ua) {
-		var device = require('../device');
+	devicebrand: function(ua) {
+		var device = require('../devicebrand');
 		return device.exec(ua);
 	},
 

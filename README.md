@@ -12,8 +12,8 @@ UA Detector runs on Node.js. You should install Node.js(at least 0.10.0) first, 
 ## View package version
 	uadetect -v
 
-## Device analysing
-	uadetect "an useragent string" -device
+## Device brand analysing
+	uadetect "an useragent string" -devicebrand
 
 ## OS analysing
 	uadetect "an useragent string" -os
@@ -27,7 +27,7 @@ UA Detector runs on Node.js. You should install Node.js(at least 0.10.0) first, 
 #Advanced usage
 
 ## Specify output format
-	uadetect "an useragent string" -device -format "%name|%version"
+	uadetect "an useragent string" -devicebrand -format "%name|%version"
 
 ## Analyse all
-	uadetect "an useragent string" -device -os -browsercore -browser
+	uadetect "an useragent string" -devicebrand -os -browsercore -browser
