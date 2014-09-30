@@ -2,7 +2,7 @@
 
 /*!
  * UA Detector
- * The 'uadetect' command - v0.1.0 (2014-09-24T09:15:37+0800)
+ * The 'uadetect' command - v0.1.0 (2014-09-30T13:41:09+0800)
  * Released under LGPL license
  */
 
@@ -60,7 +60,13 @@ var commands = {
 };
 
 
-var uaString = commandArgs[0], outputFormat = commandArgs['format'], result;
+var uaString = commandArgs[0], outputFormat = commandArgs['format'], result, total = 1;
+if (uaString) {
+	uaString = uaString.replace(/\|(\d+)$/, function(match, $1) {
+		total = parseInt($1);
+		return '';
+	});
+}
 for (var cmd in commands) {
 	if (commandArgs[cmd]) {
 		result = commands[cmd](uaString, outputFormat);
@@ -68,6 +74,7 @@ for (var cmd in commands) {
 			console.info(result);
 		} else {
 			result.type = cmd;
+			result.total = total;
 			console.info(
 				outputFormat ? outputFormat.replace(/%([a-zA-Z]+)/g, function(match, $1) {
 					return result[$1];
