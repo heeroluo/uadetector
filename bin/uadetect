@@ -2,7 +2,7 @@
 
 /*!
  * UA Detector
- * The 'uadetect' command - v0.1.0 (2014-09-30T13:41:09+0800)
+ * The 'uadetect' command - v0.1.1 (2014-10-11T11:09:52+0800)
  * Released under LGPL license
  */
 
@@ -60,13 +60,37 @@ var commands = {
 };
 
 
-var uaString = commandArgs[0], outputFormat = commandArgs['format'], result, total = 1;
-if (uaString) {
-	uaString = uaString.replace(/\|(\d+)$/, function(match, $1) {
-		total = parseInt($1);
-		return '';
-	});
+var inputString = commandArgs[0],
+	inputFormat = commandArgs['input-format'],
+	outputFormat = commandArgs['output-format'] || commandArgs['format'],
+	inputParams,
+	uaString,
+	result;
+
+if (inputFormat) {
+	inputParams = { };
+	var inputParamNames = [ ];
+	// 根据输入格式解析参数
+	inputFormat = '^' + inputFormat
+		.replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1')
+		.replace(/%(\w+)/g, function(match, $1) {
+			inputParamNames.push($1);
+			return '(.*?)';
+		})
+	+ '$';
+	// 临时使用result变量
+	result = inputString.match(inputFormat);
+	if (result) {
+		for (var i = 1; i < result.length; i++) {
+			inputParams[ inputParamNames[i - 1] ] = result[i];
+		}
+	}
+	// ua参数为useragent
+	uaString = inputParams.ua;
+} else {
+	uaString = inputString;
 }
+
 for (var cmd in commands) {
 	if (commandArgs[cmd]) {
 		result = commands[cmd](uaString, outputFormat);
@@ -74,9 +98,11 @@ for (var cmd in commands) {
 			console.info(result);
 		} else {
 			result.type = cmd;
-			result.total = total;
+			if (inputParams) {
+				for (var i in inputParams) { result[i] = inputParams[i]; }
+			}
 			console.info(
-				outputFormat ? outputFormat.replace(/%([a-zA-Z]+)/g, function(match, $1) {
+				outputFormat ? outputFormat.replace(/%(\w+)/g, function(match, $1) {
 					return result[$1];
 				}) : JSON.stringify(result)
 			);
