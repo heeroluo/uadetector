@@ -1,6 +1,6 @@
 /*!
  * UA Detector
- * Browser core detect - v0.1.0 (2014-09-23T14:36:17+0800)
+ * Browser core detect - v0.1.0 (2015-07-21T10:24:50+0800)
  * Released under LGPL license
  */
 
@@ -9,6 +9,7 @@ var util = require('./util'), os = require('./os');
 
 var pcRules = exports.pcRules = [
 	{ name: 'Opera (Blink)', rule: /\bOPR\/([\d.]+)/ },
+	{ name: 'Edge', rule: /\bEdge\/([\d.]+)/ },
 	{ name: 'Chrome', rule: /\bChrome\/(\d+)/, ranges: [ [0, 21] ] },
 	{ name: 'Safari', rule: /\b(?:Version\/([\d.]+)\s)?Safari\b/, ranges: [ [0, 5] ] },
 	{ name: 'IE', rule: /\bMSIE\s(\d+)/i, ranges: [ [0, 6] ] },

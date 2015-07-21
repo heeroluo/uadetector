@@ -1,6 +1,6 @@
 /*!
  * UA Detector
- * OS detect - v0.1.0 (2014-09-23T14:34:46+0800)
+ * OS detect - v0.1.0 (2015-07-21T10:18:57+0800)
  * Released under LGPL license
  */
 
@@ -22,7 +22,8 @@ exports.exec = function(ua) {
 					'6.0': 'Vista',
 					'6.1': '7',
 					'6.2': '8',
-					'6.3': '8.1'
+					'6.3': '8.1',
+					'10.0': '10'
 				}[ver];
 			}
 		},
@@ -56,6 +57,7 @@ exports.exec = function(ua) {
 		{ name: 'BlackBerry', rule: /\b(?:BlackBerry|BB10)\b/ },
 		{ name: 'Linux', rule: /\bLinux;?\s(?:x86|i[356]86)\b/ }
 	]);
+
 	result.type = 'os';
 
 	return result;
