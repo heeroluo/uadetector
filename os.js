@@ -1,6 +1,6 @@
 /*!
  * UA Detector
- * OS detect - v0.1.1 (2016-03-26T17:24:10+0800)
+ * OS detect - v0.1.1 (2016-03-26T17:36:57+0800)
  * Released under LGPL license
  */
 
@@ -53,7 +53,7 @@ exports.exec = function(ua) {
 		{ name: 'YunOS', rule: /\bYunOs\b/ },
 		{ name: 'Symbian', rule: /\b(?:Symbian|SymbOS)/ },
 		{ name: 'BlackBerry', rule: /\b(?:BlackBerry|BB10)\b/ },
-		{ name: 'Linux', rule: /\bLinux;?\s(?:x86|i[356]86)\b/ }
+		{ name: 'Linux', rule: /\bLinux;?\s(?:x86|i[356]86)(?:\b|_)/ }
 	]);
 
 	result.type = 'os';
