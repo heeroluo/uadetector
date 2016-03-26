@@ -1,6 +1,6 @@
 /*!
  * UA Detector
- * Device brand detect - v0.1.1 (2016-03-26T17:13:54+0800)
+ * Device brand detect - v0.1.1 (2016-03-26T17:23:23+0800)
  * Released under LGPL license
  */
 
@@ -96,8 +96,8 @@ var otherRules = [
 	{ name: 'OPPO', rule: /;\sX90[07]7\b/ },
 	{ name: 'OPPO', rule: /\bN5\d{3}\b/ },
 
-	{ name: '魅族', rule: /\bm\d+ metal\b/ },
-	{ name: '魅族', rule: /\bm\d+ note\b/ },
+	{ name: '魅族', rule: /\bm\d+ metal\b/i },
+	{ name: '魅族', rule: /\bm\d+ note\b/i },
 	{ name: '魅族', rule: /;\sM(?:03[0-2]|04[05]|35[1356]|46[01235]|M57[1568A])(?:[ACMU]|CA|MA|CE)?\b/ },
 
 	{ name: '中兴', rule: /;\sNX\d{2,}[A-Z]?\b/ },

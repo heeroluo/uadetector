@@ -1,6 +1,6 @@
 /*!
  * UA Detector
- * OS detect - v0.1.0 (2015-07-21T10:18:57+0800)
+ * OS detect - v0.1.1 (2016-03-26T17:24:10+0800)
  * Released under LGPL license
  */
 
@@ -31,8 +31,7 @@ exports.exec = function(ua) {
 		{
 			name: 'iOS',
 			rule: /\bOS(?:\s([\d_.]+))?\slike\sMac\sOS\sX\b/,
-			ranges: [ [0, 5] ],
-			versionSegments: 1
+			versionSegments: 2
 		},
 		{ name: 'iOS', rule: /\b(?:iPad|iPod|iPhone)\b/ },
 		{ name: 'iOS', rule: /\biOS\b/ },
@@ -40,7 +39,6 @@ exports.exec = function(ua) {
 		{
 			name: 'Android',
 			rule: /\bAndroid;?(?:[-\/\s]([\d.]+))?(?:\b|_)/,
-			ranges: [ [0, 2.1] ],
 			versionSegments: 2,
 			version: function(ver) {
 				if (ver) {
