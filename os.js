@@ -1,6 +1,6 @@
 /*!
  * UA Detector
- * OS detect - v0.1.1 (2016-06-19T16:50:24+0800)
+ * OS detect - v0.1.1 (2016-06-19T16:57:39+0800)
  * Released under LGPL license
  */
 
@@ -40,15 +40,7 @@ exports.exec = function(ua) {
 		{
 			name: 'Android',
 			rule: /\bAndroid;?(?:[-\/\s]([\d.]+))?(?:\b|_)/,
-			versionSegments: 2,
-			version: function(ver) {
-				if (ver) {
-					ver = ver.split('.');
-					if (parseInt(ver[0]) >= 5) { return null; }
-					if (ver[1] && ver[1].length > 1) { ver[1] = ver[1][0]; }
-					return ver.join('.');
-				}
-			}
+			versionSegments: 2
 		},
 		{ name: 'Android', rule: /\bAdr\s([\d.]+)(?:\b|_)/, versionSegments: 2 },
 		{ name: 'Symbian', rule: /\b(?:Symbian|SymbOS)/ },
