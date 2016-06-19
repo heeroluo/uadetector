@@ -1,6 +1,6 @@
 /*!
  * UA Detector
- * OS detect - v0.1.1 (2016-03-26T17:36:57+0800)
+ * OS detect - v0.1.1 (2016-06-19T16:50:24+0800)
  * Released under LGPL license
  */
 
@@ -36,6 +36,7 @@ exports.exec = function(ua) {
 		{ name: 'iOS', rule: /\b(?:iPad|iPod|iPhone)\b/ },
 		{ name: 'iOS', rule: /\biOS\b/ },
 		{ name: 'Mac OS X', rule: /\bMac\sOS\sX(?:\s([\d_.]+))?/, versionSegments: 2 },
+		{ name: 'YunOS', rule: /\bYunOs\b/ },
 		{
 			name: 'Android',
 			rule: /\bAndroid;?(?:[-\/\s]([\d.]+))?(?:\b|_)/,
@@ -50,7 +51,6 @@ exports.exec = function(ua) {
 			}
 		},
 		{ name: 'Android', rule: /\bAdr\s([\d.]+)(?:\b|_)/, versionSegments: 2 },
-		{ name: 'YunOS', rule: /\bYunOs\b/ },
 		{ name: 'Symbian', rule: /\b(?:Symbian|SymbOS)/ },
 		{ name: 'BlackBerry', rule: /\b(?:BlackBerry|BB10)\b/ },
 		{ name: 'Linux', rule: /\bLinux;?\s(?:x86|i[356]86)(?:\b|_)/ }
