@@ -1,81 +1,123 @@
 /*!
  * UA Detector
- * Utility functions - v0.1.0 (2014-09-23T17:49:51+0800)
- * Released under LGPL license
+ * Utility functions
  */
 
-function fixVersion(ver, segments) {
-	if ( !segments || !/^\d+(?:\.\d+)*$/.test(ver) ) { return ver; }
+ 
+// 固定版本号位数
+function fixVerLength(ver, verLength) {
+	if (!verLength || !/^\d+(?:\.\d+)*$/.test(ver)) {
+		return ver;
+	}
 
-	ver = ver.toString().split('.');
-	if (ver.length > segments) {
-		ver.length = segments;
+	ver = String(ver).split('.');
+	if (ver.length > verLength) {
+		ver.length = verLength;
 	} else {
-		while (ver.length < segments) { ver.push(0); }
+		while (ver.length < verLength) {
+			ver.push(0);
+		}
 	}
 
 	return ver.join('.');
 }
 
-exports.execRules = function(ua, rules, versionSegments) {
-	var result = { };
 
-	rules.some(function(r) {
-		if (!r.name || !r.rule) { return; }
+/**
+ * 执行匹配规则
+ * @method execRules
+ * @param {String} ua useragent字符串
+ * @param {Array} rules 规则
+ * @param {Number} verLength 版本号位数
+ */
+exports.execRules = function(ua, rules, verLength) {
+	const result = { };
 
-		var match = ua.match(r.rule);
-		if (match) {
-			var ver = match[1], myVerSegments = r.versionSegments || versionSegments;
-			if (ver) {
-				if ( ver.toLowerCase() === 'build' ) {
-					ver = undefined;
-				} else if ( /^\d+(?:_\d+)+$/.test(ver) ) {
-					// 把版本号分隔符统一为点号
-					ver = ver.replace(/_/g, '.');
+	rules.some((r) => {
+		if (r.preCheck && r.preCheck(ua) === false) { return; }
+
+		if (r.rule) {
+			const match = ua.match(r.rule);
+			if (match) {
+				let ver = (match[1] || '')
+					// 有些版本号分隔符是下划线，统一为点号
+					.replace(/_/g, '.')
+					// 移除结尾多余的点号
+					.replace(/\.+$/, '');
+
+				// 检查是否非法版本号
+				let verNum = parseFloat(ver);
+				if (isNaN(verNum) || verNum <= 0) {
+					ver = verNum = undefined;
 				}
-				if (ver) { ver = ver.replace(/\.+$/, ''); }
-			}
 
-			var verNum = parseFloat(ver);
-			// 版本号不能为0或负数
-			if (verNum <= 0) { ver = verNum = undefined; }
+				// 当前规则的版本长度
+				myVerLength = r.verLength || verLength;
 
-			if ( r.ranges && !isNaN(verNum) ) {
-				// 把特定区间的版本号合并为一个版本号
-				r.ranges.some(function(range) {
-					if (verNum >= range[0] && verNum < range[1]) {
-						if (range[0]) {
-							ver = fixVersion(range[0], myVerSegments) + ' ~ ';
-						} else {
-							ver = '< ';
+				if (r.ranges && verNum) {
+					// 把特定区间的版本号合并为一个版本号
+					r.ranges.some((range) => {
+						if (verNum >= range[0] && verNum < range[1]) {
+							if (range[0]) {
+								ver = fixVerLength(range[0], myVerLength) + ' ~ ';
+							} else {
+								ver = '< ';
+							}
+							ver += fixVerLength(range[1], myVerLength);
+							return true;
 						}
-						ver += fixVersion(range[1], myVerSegments);
-						return true;
-					}
-				});
+					});
+				}
+
+				switch (typeof r.version) {
+					case 'function':
+						// 返回false表示版本号非法
+						ver = r.version(ver, ua);
+						break;
+
+					case 'string':
+						ver = r.version;
+						break;
+				}
+
+				if (ver === false) {
+					return;
+				} else {
+					ver = fixVerLength(ver, myVerLength);
+				}
+
+				result.name = r.name;
+
+				if (ver != null) {
+					result.version = ver.toString();
+				}
+
+				if (r.extended) {
+					Object.assign(result, r.extended);
+				}
+
+				return true;
 			}
 
-			switch (typeof r.version) {
-				case 'function':
-					ver = r.version(ver, ua);
-					break;
+		} else if (r.keywords) {
+			const reBefore = /[\/\s;_-]/;
+			const reAfter = /[\s\d_-]/;
+			const tempUA = ua.toLowerCase();
+			const canMatchKeyword = r.keywords.some((keyword) => {
+				const pos = tempUA.indexOf(keyword.toLowerCase());
+				if (pos !== -1 &&
+					reBefore.test(tempUA[pos - 1]) &&
+					reAfter.test(tempUA[pos + keyword.length])
+				) {
+					return true;
+				}
+			});
 
-				case 'string':
-					ver = r.version;
-					break;
+			if (canMatchKeyword) {
+				result.name = r.name;
 			}
-			if (ver === false) {
-				// 返回false表示版本号不符，当前规则匹配不通过
-				return;
-			} else {
-				ver = fixVersion(ver, myVerSegments);
-			}
 
-			result.name = r.name;
-
-			if (ver != null) { result.version = ver.toString(); }
-
-			return true;
+			return canMatchKeyword;
 		}
 	});
 

@@ -1,0 +1,9 @@
+# IDE directory
+.vscode
+
+# Test files
+/test
+
+# Logs
+*.log
+npm-debug.log*
