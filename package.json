@@ -1,11 +1,11 @@
 {
 	"name": "uadetector",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"description": "A program used to analyse user agent string",
 	"author": {
-		"name": "Heero Luo",
+		"name": "Mr.Luo",
 		"email": "heeroluo@126.com",
-		"url": "http://heeroluo.net/"
+		"url": "https://mrluo.life/"
 	},
 	"bin" : {
 		"uadetect": "./bin/run.js"
