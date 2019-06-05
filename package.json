@@ -1,22 +1,26 @@
 {
 	"name": "uadetector",
 	"version": "0.4.0",
-	"description": "A program used to analyse user agent string",
+	"description": "A program that focus on useragent analysing",
+	"keywords": [
+		"useragent"
+	],
+	"bin" : {
+		"uadetect": "./bin/run.js"
+	},
 	"author": {
 		"name": "Mr.Luo",
 		"email": "heeroluo@126.com",
 		"url": "https://mrluo.life/"
 	},
-	"bin" : {
-		"uadetect": "./bin/run.js"
-	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/heeroluo/uadetector"
 	},
-	"keywords": [
-		"useragent"
-	],
+	"bugs": {
+		"url": "https://github.com/heeroluo/uadetector/issues"
+	},
+	"homepage": "https://github.com/heeroluo/uadetector#readme",
 	"license": "LGPL",
 	"engines": {
 		"node": ">=6.5.0"
