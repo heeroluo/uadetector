@@ -101,7 +101,7 @@ exports.execRules = function(ua, rules, verLength) {
 
 		} else if (r.keywords) {
 			const reBefore = /[\/\s;_-]/;
-			const reAfter = /[\s\d_-]/;
+			const reAfter = /[\s\d;_-]/;
 			const tempUA = ua.toLowerCase();
 			const canMatchKeyword = r.keywords.some((keyword) => {
 				const pos = tempUA.indexOf(keyword.toLowerCase());
