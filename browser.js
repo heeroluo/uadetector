@@ -10,6 +10,7 @@ const browserCore = require('./browsercore');
 
 const pcRules = [
 	{ name: 'QQ浏览器', rule: /\bQQBrowser(?:\/(\d+\.\d+))?/i },
+	{ name: '微信 (PC)', rule: /\bMicroMessenger\/([\d.]+)/ },
 	{ name: '傲游浏览器', rule: /\bMaxthon(?:[\/\s](\d+\.\d+))?/i },
 	{ name: '世界之窗', rule: /\bTheWorld(?:\s([\d.]+))?/i },
 	{ name: '搜狗浏览器', rule: /\bSE\b/ },
