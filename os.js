@@ -14,7 +14,7 @@ const rules = [
 	// Windows NT
 	{
 		name: 'Windows',
-		rule: /\bWindows\sNT\s(([\d.]+))\b/,
+		rule: /\bWindows\s?NT\s?(([\d.]+))\b/,
 		version(ver) {
 			return {
 				'5.0': '2000',
