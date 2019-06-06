@@ -51,14 +51,13 @@ const otherRules = [
 	{ name: '乐视', keywords: ['letv', 'le'] },
 
 	// 品牌型号规则
-	{ name: '三星', rule: /;\sbSM-[A-Z0-9]+\b/ },
 	{ name: '三星', rule: /;\sS(?:M|[CGP]H)-[A-Za-z0-9]+\b/ },
 	{ name: '三星', rule: /;\sSC-\d{2}[A-Z]\b/ },
 	{ name: '三星', rule: /;\sSH[WV]-/ },
 	{ name: '三星', rule: /;\sGT[-_][A-Z][A-Z0-9]{3,}\b/i },
-	{ name: 'LG', rule: /;\sLM-/ },
-	{ name: '华为', rule: /;\s(?:CHE|CHM|Che1|VIE|BND|PAR)-/ },
+	{ name: '华为', rule: /;\s(?:CHE|CHM|Che1|VIE|BND|PAR|JKM)-/ },
 	{ name: '华为', rule: /;\sH\d{2}-[A-Z]\d{2}\b/ },
+	{ name: 'LG', rule: /;\sLM-/ },
 	{ name: '小米', rule: /;\s(?:AWM|SKR)-/ },
 	{ name: '乐视', rule: /;\sLEX\d+\b/ },
 	{ name: '索尼', rule: /;\sL[1-9]\d[a-zA-Z]\b/ },
@@ -66,8 +65,6 @@ const otherRules = [
 	{ name: 'OPPO', rule: /;\sR8\d{2}[A-Za-z]?\b/ },
 	{ name: '魅族', rule: /;\sm\d+ metal\b/i },
 	{ name: '魅族', rule: /;\sm\d+ note\b/i },
-	{ name: '魅族', rule: /;\sM\d{2,3}[A-Z]+/ },
-	{ name: '魅族', rule: /;\sM18\d{2}\b/ },
 	{ name: '魅族', rule: /;\sPRO \d+/ },
 	{ name: '魅族', rule: /;\sMZ-[A-Z\d]+\b/ },
 	{ name: '中兴', rule: /;\sNX\d{2,}[A-Z]?(\b|_)/ },
@@ -84,7 +81,7 @@ const otherRules = [
 
 	// 特定型号
 	{ name: '索尼', keywords: ['SOV33', 'G8232', 'H8166'] },
-	{ name: '魅族', keywords: ['Y685C', 'A680Q', '16th', '16 X', '15 Plus', 'M15', 'M5s', 'M3 Max'] },
+	{ name: '魅族', keywords: ['Y685C', 'A680Q', '16th', '16 X', '15 Plus', 'M15', 'M5s', 'M3 Max', 'U10'] },
 	{ name: '一加', keywords: ['A0001'] },
 	{ name: 'OPPO', rule: /;\sR7(?:Plust|s?Plus|Plusm|sf|t|c)\b/ },
 	{ name: 'OPPO', rule: /;\sX90[07]7\b/ },
@@ -98,6 +95,9 @@ const otherRules = [
 	{ name: 'OPPO', rule: /;\sP[A-Z]+\d+\b/ },
 	{ name: 'vivo', rule: /;\sV\d+[A-Z]+\d*\b/ },
 	{ name: '金立', rule: /;\sF\d{3}[A-Z]?\b/ },
+	{ name: '酷派', rule: /;\sC10\d(?:-\d)?\b/ },
+	{ name: '魅族', rule: /;\sM\d{2,3}[A-Z]+/ },
+	{ name: '魅族', rule: /;\sM18\d{2}\b/ },
 	{ name: '魅族', rule: /;\sM\d\sE\b/ },
 	{ name: '魅族', rule: /;\s15\s/ }
 ];
