@@ -5,7 +5,7 @@ UA Detector 是一个用于分析 **User-Agent** 字符串的程序包，能识�
 
 ## 在命令行界面中使用
 
-通过 npm 全局安装程序包：
+通过 npm 全局安装：
 
 ```
 npm install uadetector -g
@@ -31,19 +31,19 @@ uadetect "an useragent string" -os
 ```
 uadetect "an useragent string" -browsercore
 ```
-分析浏览器： 
+分析浏览器：
 ```
 uadetect "an useragent string" -browser
 ```
-分析全部： 
+分析全部：
 ```
 uadetect "an useragent string" -devicebrand -os -browsercore -browser
 ```
 
-结果默认以 JSON 字符串输出，但也可以通过 format 参数指定输出格式：
+结果默认以 JSON 字符串输出，但也可以通过 output-format 参数指定输出格式：
 
 ```
-uadetect "an useragent string" -os -format "%name|%version"
+uadetect "an useragent string" -os -output-format "%name|%version"
 ```
 
 
@@ -60,15 +60,15 @@ npm install uadetector
 ``` javascript
 const detector = {
 	os: require('uadetector/os'),
-	devicebrand: require('uadetector/devicebrand'),
-	browsercore: require('uadetector/browsercore'),
+	deviceBrand: require('uadetector/device-brand'),
+	browserCore: require('uadetector/browser-core'),
 	browser: require('uadetector/browser')
 };
 
 const USER_AGENT = 'an useragent string';
 
 console.dir(detector.os.exec(USER_AGENT));
-console.dir(detector.devicebrand.exec(USER_AGENT));
-console.dir(detector.browsercore.exec(USER_AGENT));
+console.dir(detector.deviceBrand.exec(USER_AGENT));
+console.dir(detector.browserCore.exec(USER_AGENT));
 console.dir(detector.browser.exec(USER_AGENT));
 ```

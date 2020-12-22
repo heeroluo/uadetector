@@ -1,11 +1,11 @@
 {
 	"name": "uadetector",
-	"version": "0.4.0",
+	"version": "1.0.0",
 	"description": "A program that focus on useragent analysing",
 	"keywords": [
 		"useragent"
 	],
-	"bin" : {
+	"bin": {
 		"uadetect": "./bin/run.js"
 	},
 	"author": {
@@ -16,13 +16,22 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/heeroluo/uadetector"
-	},
+  },
+  "scripts": {
+    "lint": "eslint **/*.js --quiet"
+  },
 	"bugs": {
 		"url": "https://github.com/heeroluo/uadetector/issues"
 	},
 	"homepage": "https://github.com/heeroluo/uadetector#readme",
 	"license": "LGPL",
 	"engines": {
-		"node": ">=6.5.0"
+		"node": ">=10.0.0"
+	},
+	"dependencies": {
+		"eslint": "^7.16.0"
+	},
+	"devDependencies": {
+		"eslint-plugin-sonarjs": "^0.5.0"
 	}
 }
