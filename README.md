@@ -59,10 +59,10 @@ npm install uadetector
 
 ``` javascript
 const detector = {
-	os: require('uadetector/os'),
-	deviceBrand: require('uadetector/device-brand'),
-	browserCore: require('uadetector/browser-core'),
-	browser: require('uadetector/browser')
+  os: require('uadetector/os'),
+  deviceBrand: require('uadetector/device-brand'),
+  browserCore: require('uadetector/browser-core'),
+  browser: require('uadetector/browser')
 };
 
 const USER_AGENT = 'an useragent string';
