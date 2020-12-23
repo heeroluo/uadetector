@@ -1,7 +1,7 @@
 {
 	"name": "uadetector",
 	"version": "1.0.0",
-	"description": "A program that focus on useragent analysing",
+	"description": "Focus on useragent analysing.",
 	"keywords": [
 		"useragent"
 	],
