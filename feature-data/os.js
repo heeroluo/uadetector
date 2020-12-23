@@ -41,13 +41,13 @@ module.exports = [
   {
     name: 'iOS',
     rule: /\bOS(?:\s([\d_.]+))?\slike\sMac\sOS\sX\b/,
-    verLength: 2
+    verLength: 3
   },
 
   {
     name: 'macOS(Mac OS X)',
     rule: /\bMac\sOS\sX(?:\s([\d_.]+))?/,
-    verLength: 2,
+    verLength: 3,
     extended: { isPC: true }
   },
 
@@ -62,12 +62,12 @@ module.exports = [
   {
     name: 'Android',
     rule: /\bAndroid;?(?:[-/\s]([\d.]+))?(?:\b|_)/,
-    verLength: 2
+    verLength: 3
   },
   {
     name: 'Android',
     rule: /\bAdr\s([\d.]+)(?:\b|_)/,
-    verLength: 2
+    verLength: 3
   },
 
   { name: 'Symbian', rule: /\b(?:Symbian|SymbOS)/ },
