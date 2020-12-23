@@ -4,6 +4,7 @@
 
 // PC 端浏览器特征库
 exports.pcRules = [
+  { name: '企业微信 (PC)', rule: /\bwxwork\/([\d.]+)/ },
   { name: '微信 (PC)', rule: /\bMicroMessenger\/([\d.]+)/ },
   { name: 'QQ 浏览器 (PC)', rule: /\bQQBrowser(?:\/([\d.]+))?/i },
   { name: 'Edge (PC)', rule: /\bEdge?\/([\d.]+)/ },
@@ -23,14 +24,15 @@ exports.pcRules = [
 
 // 移动端浏览器特征库
 exports.mobileRules = [
-  { name: '微信 (APP)', rule: /\bMicroMessenger\/([\d.]+)/ },
+  { name: '企业微信 (Mobile)', rule: /\bwxwork\/([\d.]+)/ },
+  { name: '微信 (Mobile)', rule: /\bMicroMessenger\/([\d.]+)/ },
   { name: 'QQ 浏览器 (Mobile)', rule: /\bMQQBrowser\/([\d.]+)?/ },
-  { name: 'QQ (APP)', rule: /\bQQ\/([\d.]+)/ },
-  { name: 'QQ (APP)', rule: /\bIPadQQ\b/ },
+  { name: 'QQ (Mobile)', rule: /\bQQ\/([\d.]+)/ },
+  { name: 'QQ (Mobile)', rule: /\bIPadQQ\b/ },
   { name: 'UC 浏览器 (Mobile)', rule: /\b(?:UCBrowser|UCWEB)(?:-CMCC)?\/?\s?([\d.]+)/ },
   { name: 'UC 浏览器 (Mobile)', rule: /\bUC\b/ },
   { name: 'uni-app', keywords: ['uni-app'] },
-  { name: '钉钉 (APP)', rule: /\bDingTalk\/([\d.]+)/ },
+  { name: '钉钉 (Mobile)', rule: /\bDingTalk\/([\d.]+)/ },
   { name: '华为浏览器', rule: /\bHuaweiBrowser\/([\d.]+)/ },
   { name: 'MIUI 浏览器', rule: /\bMiuiBrowser\/([\d.]+)/ },
   { name: 'Vivo 浏览器', rule: /\bVivoBrowser\/([\d.]+)/ },
@@ -38,14 +40,14 @@ exports.mobileRules = [
   { name: '三星浏览器', rule: /\bSamsungBrowser\/([\d.]+)/ },
   { name: '夸克浏览器', rule: /\bQuark\/([\d.]+)/ },
   { name: 'HeyTap浏览器', rule: /\bHeyTapBrowser\/([\d.]+)/ },
-  { name: '百度 (APP)', rule: /\bbaiduboxapp\b\/([\d.]+)?/i },
-  { name: '百度 (APP)', rule: /\bbaiduboxpad\b/i },
+  { name: '百度 (Mobile)', rule: /\bbaiduboxapp\b\/([\d.]+)?/i },
+  { name: '百度 (Mobile)', rule: /\bbaiduboxpad\b/i },
   { name: '百度浏览器 (Mobile)', rule: /\b(?:baidubrowser|bdbrowser_i18n)\/([\d.]+)?/ },
   { name: '百度浏览器 (Mobile)', rule: /\bbaidubrowserpad\b/ },
-  { name: '新浪微博 (APP)', rule: /(?:\b|_)Weibo(?:\b|_)/i },
+  { name: '新浪微博 (Mobile)', rule: /(?:\b|_)Weibo(?:\b|_)/i },
   { name: '搜狗浏览器 (Mobile)', rule: /\bSogouMobileBrowser\/([\d.]+)/ },
   { name: '猎豹浏览器 (Mobile)', rule: /\bLieBaoFast\/([\d.]+)/ },
-  { name: 'Qzone (APP)', rule: /\bQzone\b/ },
+  { name: 'Qzone (Mobile)', rule: /\bQzone\b/ },
   { name: '傲游 (Mobile)', rule: /\b(?:Maxthon|MxBrowser)\/([\d.]+)/ },
   { name: '360 浏览器 (Mobile)', rule: /\b360browser\b/ },
   { name: '360 浏览器 (Mobile)', rule: /\b360\sAphone\sBrowser\s(?:\(([\d.]+)(?:beta)?\))?/ },
