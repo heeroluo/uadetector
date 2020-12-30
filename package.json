@@ -16,10 +16,10 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/heeroluo/uadetector"
-  },
-  "scripts": {
-    "lint": "eslint **/*.js --quiet"
-  },
+	},
+	"scripts": {
+		"lint": "eslint **/*.js --quiet"
+	},
 	"bugs": {
 		"url": "https://github.com/heeroluo/uadetector/issues"
 	},
@@ -28,10 +28,9 @@
 	"engines": {
 		"node": ">=10.0.0"
 	},
-	"dependencies": {
-		"eslint": "^7.16.0"
-	},
+	"dependencies": {},
 	"devDependencies": {
+		"eslint": "^7.16.0",
 		"eslint-plugin-sonarjs": "^0.5.0"
 	}
 }
