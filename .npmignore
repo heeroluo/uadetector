@@ -1,5 +1,6 @@
-# IDE directory
+# IDE
 .vscode
+.editorconfig
 
 # Test files
 /test
@@ -7,3 +8,7 @@
 # Logs
 *.log
 npm-debug.log*
+
+# ESLint configuration
+.eslintrc.js
+.eslintignore
