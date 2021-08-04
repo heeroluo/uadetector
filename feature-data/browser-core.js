@@ -18,13 +18,13 @@ exports.spiderBotRules = [
 
 // PC 端浏览器核心特征库
 exports.pcRules = [
+  { name: 'Edge', rule: /\bEdge\/([\d.]+)/ },
   { name: 'Chrome', rule: /\bChrome\/([\d.]+)/ },
   { name: 'Safari', rule: /\b(?:Version\/([\d.]+)\s)?Safari\b/ },
   {
     name: 'Webkit (PC)',
     rule: /\bAppleWebKit(?:[/\s]?([\d.]+))?/i
   },
-  { name: 'Edge', rule: /\bEdge?\/([\d.]+)/ },
   { name: 'IE', rule: /\bMSIE\s(\d+)/i },
   { name: 'IE', rule: /\bTrident\/.*;\srv:(\d+)/ },
   { name: 'Firefox', rule: /\bFirefox\/([\d.]+)/ },
