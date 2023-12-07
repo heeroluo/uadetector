@@ -74,6 +74,13 @@ module.exports = [
   { name: 'BlackBerry', rule: /\b(?:BlackBerry|BB10)\b/ },
 
   {
+    name: 'ChromeOS',
+    rule: /\bCrOS\sx86/,
+    extended: { isPC: true }
+  },
+  { name: 'ChromeOS', rule: /\bCrOS\b/ },
+
+  {
     name: 'Linux',
     rule: /\bLinux;?\s(?:x86|i[356]86)(?:\b|_)/,
     extended: { isPC: true }
