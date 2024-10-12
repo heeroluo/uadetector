@@ -58,6 +58,11 @@ module.exports = [
     extended: { isPC: true }
   },
 
+  {
+    name: 'OpenHarmony',
+    rule: /\bOpenHarmony\s([\d.]+)\b/
+  },
+
   { name: 'YunOS', rule: /\bYunOs\b/ },
   {
     name: 'Android',
