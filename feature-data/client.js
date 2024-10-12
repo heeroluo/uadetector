@@ -2,7 +2,15 @@
  * @file 浏览器特征库。
  */
 
-// PC 端浏览器特征库
+// @ts-check
+
+/** @typedef { import('./types').Rule } Rule */
+
+
+/**
+ * PC 客户端匹配规则。
+ * @type {Rule[]}
+ */
 exports.pcRules = [
   { name: '企业微信 (PC)', rule: /\bwxwork\/([\d.]+)/ },
   { name: '微信 (PC)', rule: /\bMicroMessenger\/([\d.]+)/ },
@@ -22,7 +30,10 @@ exports.pcRules = [
   { name: '搜狗浏览器 (PC)', rule: /\bSE\b/ }
 ];
 
-// 移动端浏览器特征库
+/**
+ * 移动客户端匹配规则。
+ * @type {Rule[]}
+ */
 exports.mobileRules = [
   { name: '企业微信 (Mobile)', rule: /\bwxwork\/([\d.]+)/ },
   { name: '微信 (Mobile)', rule: /\bMicroMessenger\/([\d.]+)/ },

@@ -4,11 +4,11 @@
 
 const core = require('./lib/core');
 const os = require('./os');
-const browserCoreData = require('./feature-data/browser');
+const browserRules = require('./feature-data/browser');
 
 // 先排除搜索引擎爬虫，再匹配后续规则
-const pcRules = browserCoreData.spiderBotRules.concat(browserCoreData.pcRules);
-const mobileRules = browserCoreData.spiderBotRules.concat(browserCoreData.mobileRules);
+const pcRules = browserRules.spiderBotRules.concat(browserRules.pcRules);
+const mobileRules = browserRules.spiderBotRules.concat(browserRules.mobileRules);
 
 exports.exec = (ua) => {
   const result = core.execRules(

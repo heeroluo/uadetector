@@ -2,7 +2,16 @@
  * @file 浏览器特征库。
  */
 
-module.exports = [
+// @ts-check
+
+/** @typedef { import('./types').Rule } Rule */
+
+
+/**
+ * 操作系统匹配规则。
+ * @type {Rule[]}
+ */
+const rules = [
   // Windows 移动版
   {
     name: 'Windows Phone',
@@ -91,3 +100,5 @@ module.exports = [
     extended: { isPC: true }
   }
 ];
+
+module.exports = rules;

@@ -2,10 +2,17 @@
  * @file 浏览器核心特征库。
  */
 
+// @ts-check
+
 const osDetector = require('../os');
 
+/** @typedef { import('./types').Rule } Rule */
 
-// 搜索引擎爬虫特征库
+
+/**
+ * 搜索引擎爬虫匹配规则。
+ * @type {Rule[]}
+ */
 exports.spiderBotRules = [
   { name: 'Baidu Spider', rule: /\bBaiduspider\b/ },
   { name: 'Googlebot', rule: /\b(?:Googlebot|AdsBot-Google-Mobile)\b/ },
@@ -16,7 +23,10 @@ exports.spiderBotRules = [
   { name: '360Spider', rule: /\b(?:360Spider|HaosouSpider)/i }
 ];
 
-// PC 端浏览器核心特征库
+/**
+ * PC 端浏览器匹配规则。
+ * @type {Rule[]}
+ */
 exports.pcRules = [
   { name: 'Edge', rule: /\bEdge\/([\d.]+)/ },
   { name: 'Chrome', rule: /\bChrome\/([\d.]+)/ },
@@ -31,15 +41,16 @@ exports.pcRules = [
   { name: 'Opera (Presto)', rule: /\bOpera\/([\d.]+)/ }
 ];
 
-// 移动端浏览器核心特征库
+/**
+ * 移动端浏览器匹配规则。
+ * @type {Rule[]}
+ */
 exports.mobileRules = [
   { name: 'Chrome Mobile', rule: /\b(?:Chrome|CrMo|CriOS)\/([\d.]+)/ },
   {
     name: 'Mobile Safari',
     rule: /\b(?:Version\/([\d.]+).*\s?)?Safari\b/,
-    preCheck(ua) {
-      return osDetector.exec(ua).name === 'iOS';
-    }
+    preCheck(ua) { return osDetector.exec(ua).name === 'iOS'; }
   },
   {
     name: 'Webkit (Mobile)',

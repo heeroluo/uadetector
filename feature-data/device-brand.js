@@ -2,14 +2,24 @@
  * @file 设备品牌特征库。
  */
 
-// 苹果设备特征库
+// @ts-check
+
+/** @typedef { import('./types').Rule } Rule */
+
+/**
+ * 苹果设备匹配规则。
+ * @type {Rule[]}
+ */
 exports.appleRules = [
   { name: 'iPad', rule: /iPad/ },
   { name: 'iPod', rule: /iPod/ },
   { name: 'iPhone', rule: /iPhone/ }
 ];
 
-// 其他（绝大部分是安卓）设备特征库
+/**
+ * 其他（绝大部分是安卓）设备匹配规则。
+ * @type {Rule[]}
+ */
 exports.otherRules = [
   // 品牌关键词
   { name: '华为', rule: /\b(?:huawei|honor)/i },
