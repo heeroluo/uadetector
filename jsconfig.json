@@ -1,0 +1,12 @@
+{
+  "include": [
+    "**/*.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "strict": true
+  }
+}

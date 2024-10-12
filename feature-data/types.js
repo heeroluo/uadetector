@@ -17,7 +17,7 @@
  * @property {RegExp|string} [modelRule] 匹配机型的正则表达式或字符串。
  * @property {(ua: string) => boolean} [preCheck] 预匹配函数。
  * @property {number} [verLength] 版本号保留的段数。
- * @property {(ver: string) => string} [version] 对版本号进行处理的函数。
+ * @property {(ver: string) => string|undefined} [version] 对版本号进行处理的函数。
  * @property {RuleExtended} [extended] 匹配到规则之后的附加特性。
  */
 

@@ -2,24 +2,34 @@
  * @file 浏览器检测模块。
  */
 
+// @ts-check
+
 const core = require('./lib/core');
 const os = require('./os');
 const browserRules = require('./feature-data/browser');
 const clientRules = require('./feature-data/client');
 
-const pcClientRules = browserRules.spiderBotRules
+/** @typedef { import('./lib/core').MatchingResult } MatchingResult */
+
+
+const pcRules = browserRules.spiderBotRules
   .concat(clientRules.pcRules)
   .concat(browserRules.pcRules);
 
-const mobClientRules = browserRules.spiderBotRules
+const mobileRules = browserRules.spiderBotRules
   .concat(clientRules.mobileRules)
   .concat(browserRules.mobileRules);
 
+/**
+ * 执行客户端类型匹配。
+ * @param {string} ua 用户代理字符串。
+ * @returns {MatchingResult} 匹配结果。
+ */
 exports.exec = (ua) => {
-  const result = core.execRules(
+  return core.execRules(
     ua,
-    os.exec(ua).isPC ? pcClientRules : mobClientRules, 2
+    'client',
+    os.exec(ua).isPC ? pcRules : mobileRules,
+    2
   );
-  result.type = 'client';
-  return result;
 };
