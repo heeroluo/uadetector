@@ -1,57 +1,64 @@
 # UA Detector
 
-UA Detector 是一个用于分析 **User-Agent** 字符串的程序包，能识别出**操作系统**、**设备品牌**（主要针对移动设备）、**浏览器核心**以及**浏览器**。
-
+UA Detector 是一个用于分析 **User-Agent** 字符串的程序包，能识别出**操作系统**、**浏览器核心**以及**浏览器**。对于移动设备，还可以识别出**设备品牌**。
 
 ## 在命令行界面中使用
 
 通过 npm 全局安装：
 
-```
+```bash
 npm install uadetector -g
 ```
 
 安装成功后，可以运行此命令查看版本号：
 
-```
+```bash
 uadetect -v
 ```
 
 ### 分析 User-Agent
 
 分析设备品牌：
-```
+
+```bash
 uadetect "an useragent string" -devicebrand
 ```
+
 分析操作系统：
-```
+
+```bash
 uadetect "an useragent string" -os
 ```
+
 分析浏览器：
-```
+
+```bash
 uadetect "an useragent string" -browser
 ```
+
 分析客户端：
-```
+
+```bash
 uadetect "an useragent string" -client
 ```
+
 分析全部：
-```
+
+```bash
 uadetect "an useragent string" -devicebrand -os -browsercore -browser
 ```
 
 结果默认以 JSON 字符串输出，但也可以通过 output-format 参数指定输出格式：
 
-```
+```bash
 uadetect "an useragent string" -os -output-format "%name|%version"
 ```
-
 
 ## 作为依赖包使用
 
 在项目目录下运行命令安装程序包：
 
-```
+```bash
 npm install uadetector
 ```
 
@@ -81,3 +88,4 @@ console.dir(detector.client.exec(USER_AGENT));
 - 优化识别设备型号的正则表达式。
 - `browser-core` 改名为 `browser`。
 - `browser` 改名为 `client`。
+- 增加类型声明注释。
