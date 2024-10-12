@@ -9,7 +9,7 @@ const os = require('./os');
 const {
   appleRules,
   otherRules
-} = require('./feature-data/device-brand');
+} = require('./rules/device-brand');
 
 /** @typedef { import('./lib/core').MatchingResult } MatchingResult */
 

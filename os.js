@@ -5,7 +5,7 @@
 // @ts-check
 
 const core = require('./lib/core');
-const rules = require('./feature-data/os');
+const rules = require('./rules/os');
 
 /** @typedef { import('./lib/core').MatchingResult } MatchingResult */
 

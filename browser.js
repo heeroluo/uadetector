@@ -6,7 +6,7 @@
 
 const core = require('./lib/core');
 const os = require('./os');
-const browserRules = require('./feature-data/browser');
+const browserRules = require('./rules/browser');
 
 /** @typedef { import('./lib/core').MatchingResult } MatchingResult */
 
