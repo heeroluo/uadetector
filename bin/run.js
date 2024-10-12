@@ -50,13 +50,13 @@ const commands = {
     return os.exec(ua);
   },
 
-  browsercore(ua) {
-    const browserCore = require('../browser-core');
+  browser(ua) {
+    const browserCore = require('../browser');
     return browserCore.exec(ua);
   },
 
-  browser(ua) {
-    const browser = require('../browser');
+  client(ua) {
+    const browser = require('../client');
     return browser.exec(ua);
   }
 };
