@@ -1,22 +1,20 @@
 /**
- * @file 浏览器检测模块。
+ * @file 浏览器核心检测模块。
  */
 
 const core = require('./lib/core');
 const os = require('./os');
-const browserCoreData = require('./feature-data/browser-core');
-const browserData = require('./feature-data/browser');
+const browserCoreData = require('./feature-data/browser');
 
-const pcRules = browserCoreData.spiderBotRules
-  .concat(browserData.pcRules)
-  .concat(browserCoreData.pcRules);
-
-const mobileRules = browserCoreData.spiderBotRules
-  .concat(browserData.mobileRules)
-  .concat(browserCoreData.mobileRules);
+// 先排除搜索引擎爬虫，再匹配后续规则
+const pcRules = browserCoreData.spiderBotRules.concat(browserCoreData.pcRules);
+const mobileRules = browserCoreData.spiderBotRules.concat(browserCoreData.mobileRules);
 
 exports.exec = (ua) => {
-  const result = core.execRules(ua, os.exec(ua).isPC ? pcRules : mobileRules, 2);
+  const result = core.execRules(
+    ua,
+    os.exec(ua).isPC ? pcRules : mobileRules, 2
+  );
   result.type = 'browser';
   return result;
 };

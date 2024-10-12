@@ -27,13 +27,13 @@ uadetect "an useragent string" -devicebrand
 ```
 uadetect "an useragent string" -os
 ```
-分析浏览器核心：
-```
-uadetect "an useragent string" -browsercore
-```
 分析浏览器：
 ```
 uadetect "an useragent string" -browser
+```
+分析客户端：
+```
+uadetect "an useragent string" -client
 ```
 分析全部：
 ```
@@ -61,14 +61,23 @@ npm install uadetector
 const detector = {
   os: require('uadetector/os'),
   deviceBrand: require('uadetector/device-brand'),
-  browserCore: require('uadetector/browser-core'),
-  browser: require('uadetector/browser')
+  browser: require('uadetector/browser'),
+  client: require('uadetector/client')
 };
 
 const USER_AGENT = 'an useragent string';
 
 console.dir(detector.os.exec(USER_AGENT));
 console.dir(detector.deviceBrand.exec(USER_AGENT));
-console.dir(detector.browserCore.exec(USER_AGENT));
 console.dir(detector.browser.exec(USER_AGENT));
+console.dir(detector.client.exec(USER_AGENT));
 ```
+
+## Changelog
+
+### v2.0.0
+
+- 优化 vivo 设备的识别规则。
+- 优化识别设备型号的正则表达式。
+- `browser-core` 改名为 `browser`。
+- `browser` 改名为 `client`。
