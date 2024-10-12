@@ -1,5 +1,5 @@
 /**
- * @file 浏览器核心特征库。
+ * @file 浏览器特征库。
  */
 
 // @ts-check
@@ -14,13 +14,13 @@ const osDetector = require('../os');
  * @type {Rule[]}
  */
 exports.spiderBotRules = [
-  { name: 'Baidu Spider', rule: /\bBaiduspider\b/ },
-  { name: 'Googlebot', rule: /\b(?:Googlebot|AdsBot-Google-Mobile)\b/ },
-  { name: 'Bingbot', rule: /\bbingbot\b/ },
-  { name: 'SogouSpider', rule: /\bSogou\s.*Spider\b/ },
-  { name: 'YisouSpider', rule: /\bYisouSpider\b/ },
-  { name: 'Sosospider', rule: /\bSoso(?:image)?spider\b/ },
-  { name: '360Spider', rule: /\b(?:360Spider|HaosouSpider)/i }
+  { name: 'Baidu Spider', regExp: /\bBaiduspider\b/ },
+  { name: 'Googlebot', regExp: /\b(?:Googlebot|AdsBot-Google-Mobile)\b/ },
+  { name: 'Bingbot', regExp: /\bbingbot\b/ },
+  { name: 'SogouSpider', regExp: /\bSogou\s.*Spider\b/ },
+  { name: 'YisouSpider', regExp: /\bYisouSpider\b/ },
+  { name: 'Sosospider', regExp: /\bSoso(?:image)?spider\b/ },
+  { name: '360Spider', regExp: /\b(?:360Spider|HaosouSpider)/i }
 ];
 
 /**
@@ -28,17 +28,17 @@ exports.spiderBotRules = [
  * @type {Rule[]}
  */
 exports.pcRules = [
-  { name: 'Edge', rule: /\bEdge\/([\d.]+)/ },
-  { name: 'Chrome', rule: /\bChrome\/([\d.]+)/ },
-  { name: 'Safari', rule: /\b(?:Version\/([\d.]+)\s)?Safari\b/ },
+  { name: 'Edge', regExp: /\bEdge\/([\d.]+)/ },
+  { name: 'Chrome', regExp: /\bChrome\/([\d.]+)/ },
+  { name: 'Safari', regExp: /\b(?:Version\/([\d.]+)\s)?Safari\b/ },
   {
     name: 'Webkit (PC)',
-    rule: /\bAppleWebKit(?:[/\s]?([\d.]+))?/i
+    regExp: /\bAppleWebKit(?:[/\s]?([\d.]+))?/i
   },
-  { name: 'IE', rule: /\bMSIE\s(\d+)/i },
-  { name: 'IE', rule: /\bTrident\/.*;\srv:(\d+)/ },
-  { name: 'Firefox', rule: /\bFirefox\/([\d.]+)/ },
-  { name: 'Opera (Presto)', rule: /\bOpera\/([\d.]+)/ }
+  { name: 'IE', regExp: /\bMSIE\s(\d+)/i },
+  { name: 'IE', regExp: /\bTrident\/.*;\srv:(\d+)/ },
+  { name: 'Firefox', regExp: /\bFirefox\/([\d.]+)/ },
+  { name: 'Opera (Presto)', regExp: /\bOpera\/([\d.]+)/ }
 ];
 
 /**
@@ -46,23 +46,23 @@ exports.pcRules = [
  * @type {Rule[]}
  */
 exports.mobileRules = [
-  { name: 'Chrome Mobile', rule: /\b(?:Chrome|CrMo|CriOS)\/([\d.]+)/ },
+  { name: 'Chrome Mobile', regExp: /\b(?:Chrome|CrMo|CriOS)\/([\d.]+)/ },
   {
     name: 'Mobile Safari',
-    rule: /\b(?:Version\/([\d.]+).*\s?)?Safari\b/,
+    regExp: /\b(?:Version\/([\d.]+).*\s?)?Safari\b/,
     preCheck(ua) { return osDetector.exec(ua).name === 'iOS'; }
   },
   {
     name: 'Webkit (Mobile)',
-    rule: /\bAppleWebKit(?:[/\s]?([\d.]+))?/i
+    regExp: /\bAppleWebKit(?:[/\s]?([\d.]+))?/i
   },
   {
     name: 'Webkit (Mobile)',
-    rule: /Web[Kk]it(?:\/?([\d.]+))?/
+    regExp: /Web[Kk]it(?:\/?([\d.]+))?/
   },
-  { name: 'Opera Mini', rule: /\bOpera\sMini\b/ },
-  { name: 'Opera Mobile (Presto)', rule: /\bOpera\/([\d.]+)/ },
-  { name: 'IE Mobile', rule: /\b(?:IEMobile|MSIE)[/\s]([\d.]+)/ },
-  { name: 'IE Mobile', rule: /\bBrowser\/IE([\d.]+)/ },
-  { name: 'Mobile Firefox', rule: /\bFirefox\/([\d.]+)/ },
+  { name: 'Opera Mini', regExp: /\bOpera\sMini\b/ },
+  { name: 'Opera Mobile (Presto)', regExp: /\bOpera\/([\d.]+)/ },
+  { name: 'IE Mobile', regExp: /\b(?:IEMobile|MSIE)[/\s]([\d.]+)/ },
+  { name: 'IE Mobile', regExp: /\bBrowser\/IE([\d.]+)/ },
+  { name: 'Mobile Firefox', regExp: /\bFirefox\/([\d.]+)/ },
 ];

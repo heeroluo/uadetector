@@ -15,16 +15,16 @@ const rules = [
   // Windows 移动版
   {
     name: 'Windows Phone',
-    rule: /\bWindows\sPhone(?:\sOS)?(?:\s([\d.]+))?\b/,
+    regExp: /\bWindows\sPhone(?:\sOS)?(?:\s([\d.]+))?\b/,
     verLength: 2
   },
-  { name: 'Windows Mobile', rule: /\bWindows\s?Mobile\b/ },
-  { name: 'Windows CE', rule: /\bWindows\sCE\b/ },
+  { name: 'Windows Mobile', regExp: /\bWindows\s?Mobile\b/ },
+  { name: 'Windows CE', regExp: /\bWindows\sCE\b/ },
 
   // NT 核心的 Windows 系统
   {
     name: 'Windows',
-    rule: /\bWindows\s?NT\s?(([\d.]+))\b/,
+    regExp: /\bWindows\s?NT\s?(([\d.]+))\b/,
     version(ver) {
       return {
         '5.0': '2000',
@@ -43,19 +43,19 @@ const rules = [
   // Windows 95/98/ME
   {
     name: 'Windows',
-    rule: /\bWindows(?:\s([\d.]+))\b/,
+    regExp: /\bWindows(?:\s([\d.]+))\b/,
     extended: { isPC: true }
   },
 
   {
     name: 'iOS',
-    rule: /\bOS(?:\s([\d_.]+))?\slike\sMac\sOS\sX\b/,
+    regExp: /\bOS(?:\s([\d_.]+))?\slike\sMac\sOS\sX\b/,
     verLength: 3
   },
 
   {
     name: 'macOS(Mac OS X)',
-    rule: /\bMac\sOS\sX(?:\s([\d_.]+))?/,
+    regExp: /\bMac\sOS\sX(?:\s([\d_.]+))?/,
     verLength: 3,
     extended: { isPC: true }
   },
@@ -63,40 +63,40 @@ const rules = [
   // Universal links spider
   {
     name: 'Darwin',
-    rule: /\bDarwin\b/,
+    regExp: /\bDarwin\b/,
     extended: { isPC: true }
   },
 
   {
     name: 'OpenHarmony',
-    rule: /\bOpenHarmony\s([\d.]+)\b/
+    regExp: /\bOpenHarmony\s([\d.]+)\b/
   },
 
-  { name: 'YunOS', rule: /\bYunOs\b/ },
+  { name: 'YunOS', regExp: /\bYunOs\b/ },
   {
     name: 'Android',
-    rule: /\bAndroid;?(?:[-/\s]([\d.]+))?(?:\b|_)/,
+    regExp: /\bAndroid;?(?:[-/\s]([\d.]+))?(?:\b|_)/,
     verLength: 3
   },
   {
     name: 'Android',
-    rule: /\bAdr\s([\d.]+)(?:\b|_)/,
+    regExp: /\bAdr\s([\d.]+)(?:\b|_)/,
     verLength: 3
   },
 
-  { name: 'Symbian', rule: /\b(?:Symbian|SymbOS)/ },
-  { name: 'BlackBerry', rule: /\b(?:BlackBerry|BB10)\b/ },
+  { name: 'Symbian', regExp: /\b(?:Symbian|SymbOS)/ },
+  { name: 'BlackBerry', regExp: /\b(?:BlackBerry|BB10)\b/ },
 
   {
     name: 'ChromeOS',
-    rule: /\bCrOS\sx86/,
+    regExp: /\bCrOS\sx86/,
     extended: { isPC: true }
   },
-  { name: 'ChromeOS', rule: /\bCrOS\b/ },
+  { name: 'ChromeOS', regExp: /\bCrOS\b/ },
 
   {
     name: 'Linux',
-    rule: /\bLinux;?\s(?:x86|i[356]86)(?:\b|_)/,
+    regExp: /\bLinux;?\s(?:x86|i[356]86)(?:\b|_)/,
     extended: { isPC: true }
   }
 ];
