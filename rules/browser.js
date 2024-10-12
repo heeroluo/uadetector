@@ -1,5 +1,5 @@
 /**
- * @file 浏览器特征库。
+ * @file 浏览器内核特征库。
  */
 
 // @ts-check
@@ -24,7 +24,7 @@ exports.spiderBotRules = [
 ];
 
 /**
- * PC 端浏览器匹配规则。
+ * PC 端浏览器内核匹配规则。
  * @type {Rule[]}
  */
 exports.pcRules = [
