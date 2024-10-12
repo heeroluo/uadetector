@@ -14,7 +14,7 @@ exports.otherRules = [
   // 品牌关键词
   { name: '华为', rule: /\b(?:huawei|honor)/i },
   { name: '华为', keywords: ['ideahub', 'figi'] },
-  { name: 'vivo', keywords: ['vivo', 'vivoBrowser'] },
+  { name: 'vivo', keywords: ['vivo'] },
   { name: 'OPPO', keywords: ['oppo'] },
   { name: '小米', keywords: ['redmi', 'hongmi', 'shark', 'Mi', 'MIX', 'POCO'] },
   { name: '小米', rule: /\bxiaomi/i },
@@ -127,7 +127,7 @@ exports.otherRules = [
   // 模糊规则（型号规则较为简单，避免误判放到最后）
   { name: 'OPPO', modelRule: /^P[A-Z]+\d+$/ },
   { name: 'vivo', modelRule: /^V\d+[A-Z]+\d*$/ },
-  { name: 'vivo', modelRule: /^V2\d{3}$/ },
+  { name: 'vivo', modelRule: /^V[12]\d{3}[A-Z]{0,2}$/ },
   { name: '魅族', modelRule: /^M\d{2,3}[A-Z]+$/ },
   { name: '魅族', modelRule: /^M18\d{2}$/ },
   { name: '魅族', modelRule: /^M\d\sE$/ },
