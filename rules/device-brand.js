@@ -33,7 +33,7 @@ exports.otherRules = [
   { name: '魅族', keywords: ['meizu'] },
   { name: '一加', keywords: ['oneplus', 'one'] },
   { name: '锤子', keywords: ['smartisan'] },
-  { name: '联想', keywords: ['lenovo', 'zuk'] },
+  { name: '联想', keywords: ['lenovo', 'zuk', 'erazer'] },
   { name: '美图', keywords: ['meitu'] },
   { name: '酷派', keywords: ['coolpad'] },
   { name: '华硕', keywords: ['asus', 'padfone'] },
@@ -64,6 +64,7 @@ exports.otherRules = [
   { name: 'TCL', keywords: ['tcl'] },
   { name: '中兴', keywords: ['zte'] },
   { name: '传音', keywords: ['infinix', 'tecno'] },
+  { name: '比亚迪', keywords: ['byd auto'] },
 
   // 特定型号
   { name: '华为', modelRegExp: /^H60-L0[12]$/ },
