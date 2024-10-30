@@ -82,6 +82,11 @@ console.dir(detector.client.exec(USER_AGENT));
 
 ## Changelog
 
+### v2.1.0
+
+- 优化小米、海信、金立、小辣椒、天语、酷派的识别规则。
+- 新增学而思、作业帮、比亚迪（车机）的识别。
+
 ### v2.0.0
 
 - 优化 vivo 设备的识别规则。
