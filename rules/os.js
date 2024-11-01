@@ -8,6 +8,15 @@
 
 
 /**
+ * 判断是否为桌面设备（针对 ChromeOS、Linux、FreeBSD）。
+ * @param {string} ua User-Agent 字符串。
+ * @returns 是否为桌面端。
+ */
+function isPC(ua) {
+  return /\(X11[;)]/i.test(ua) || /(?:x86|i[356]86|amd64)(?:\b|_)/i.test(ua);
+}
+
+/**
  * 操作系统匹配规则。
  * @type {Rule[]}
  */
@@ -60,13 +69,6 @@ const rules = [
     extended: { isPC: true }
   },
 
-  // Universal links spider
-  {
-    name: 'Darwin',
-    regExp: /\bDarwin\b/,
-    extended: { isPC: true }
-  },
-
   {
     name: 'OpenHarmony',
     regExp: /\bOpenHarmony\s([\d.]+)\b/
@@ -89,21 +91,20 @@ const rules = [
 
   {
     name: 'ChromeOS',
-    regExp: /\bCrOS\sx86/,
-    extended: { isPC: true }
+    regExp: /\bCrOS\b/,
+    extended: { isPC }
   },
-  { name: 'ChromeOS', regExp: /\bCrOS\b/ },
 
   {
     name: 'FreeBSD',
     keywords: ['FreeBSD'],
-    extended: { isPC: true }
+    extended: { isPC }
   },
 
   {
     name: 'Linux',
-    keywords: ['linux'],
-    extended: { isPC: true }
+    keywords: ['Linux'],
+    extended: { isPC }
   }
 ];
 
