@@ -86,13 +86,17 @@ console.dir(detector.client.exec(USER_AGENT));
 
 支持以下操作系统的识别：
 
-> Android、BlackBerry、ChromeOS、Darwin、Linux、OpenHarmony、Symbian、Windows、Windows CE、Windows Mobile、Windows Phone、YunOS、iOS、macOS(Mac OS X)
+> Android、BlackBerry、ChromeOS、Darwin、FreeBSD、Linux、OpenHarmony、Symbian、Windows、Windows CE、Windows Mobile、Windows Phone、YunOS、iOS、macOS(Mac OS X)
 
 ### 浏览器（内核）
 
 支持以下浏览器（内核）的识别：
 
 > Chrome、Chrome Mobile、Edge、Firefox、IE、IE Mobile、Mobile Firefox、Mobile Safari、Opera (Presto)、Opera Mini、Opera Mobile (Presto)、Safari、Webkit (Mobile)、Webkit (PC)
+
+同时也支持对以下爬虫的识别：
+
+> Baidu Spider、Googlebot、Bingbot、DingTalkBot、SogouSpider、YisouSpider、Sosospider、360Spider
 
 ### 客户端
 
