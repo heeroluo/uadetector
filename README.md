@@ -94,7 +94,7 @@ console.dir(detector.client.exec(USER_AGENT));
 
 > Chrome、Chrome Mobile、Edge、Firefox、IE、IE Mobile、Mobile Firefox、Mobile Safari、Opera (Presto)、Opera Mini、Opera Mobile (Presto)、Safari、Webkit (Mobile)、Webkit (PC)
 
-同时也支持对以下爬虫的识别：
+同时也支持以下爬虫的识别：
 
 > Baidu Spider、Googlebot、Bingbot、DingTalkBot、SogouSpider、YisouSpider、Sosospider、360Spider
 
@@ -132,7 +132,7 @@ console.dir(detector.client.exec(USER_AGENT));
   - 百度浏览器 (PC)
 - 优化 IE 浏览器的识别规则。
 - 优化 Linux 系统的识别规则。
-- 新增 DingTalkBot 爬虫的识别（位于浏览器和客户端识别模块中）。
+- 新增 DingTalkBot 爬虫的识别（位于浏览器识别模块中）。
 - 新增 FreeBSD 系统的识别。
 - 联想品牌的识别规则新增 `erazer` 关键词。
 
