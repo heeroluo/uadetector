@@ -86,7 +86,7 @@ console.dir(detector.client.exec(USER_AGENT));
 
 支持以下操作系统的识别：
 
-> Android、BlackBerry、ChromeOS、Darwin、FreeBSD、Linux、OpenHarmony、Symbian、Windows、Windows CE、Windows Mobile、Windows Phone、YunOS、iOS、macOS(Mac OS X)
+> Android、BlackBerry、ChromeOS、FreeBSD、Linux、OpenHarmony、Symbian、Windows、Windows CE、Windows Mobile、Windows Phone、YunOS、iOS、macOS(Mac OS X)
 
 ### 浏览器（内核）
 
@@ -123,6 +123,11 @@ console.dir(detector.client.exec(USER_AGENT));
 - 由于荣耀手机的型号规则与华为较为相似，暂无有效方法将两者区分开，故荣耀品牌归并到华为品牌中，不做区分。
 
 ## Changelog
+
+### v2.3.0
+
+- 考虑到意思不明确，移除了操作系统识别中对 Darwin 的识别。
+- 优化操作系统识别结果为 ChromeOS、FreeBSD 或 Linux 时，是否为桌面设备的判断。
 
 ### v2.2.0
 
