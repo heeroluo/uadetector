@@ -5,7 +5,7 @@
 /**
  * 匹配到规则之后的附加特性。
  * @typedef RuleExtended
- * @property {boolean} isPC 是否为 PC 端。
+ * @property {boolean|(ua: string) => boolean} isPC 是否为 PC 端。
  */
 
 /**
