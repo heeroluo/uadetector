@@ -102,7 +102,9 @@ console.dir(detector.client.exec(USER_AGENT));
 
 支持以下客户端的识别：
 
-> 2345 手机浏览器（Mobile）、2345 浏览器 (PC)、360 浏览器 (Mobile)、Edge (Mobile)、Edge (PC)、Electron、GreenBrowser、HeyTap浏览器、MIUI 浏览器、Opera (Blink)、Opera Mobile (Blink)、Oppo 浏览器、QQ (Mobile)、QQ 浏览器 (Mobile)、QQ 浏览器 (PC)、Qzone (Mobile)、UC 浏览器 (Mobile)、UC 浏览器 (PC)、Vivo 浏览器、uni-app、三星浏览器、世界之窗、企业微信 (Mobile)、企业微信 (PC)、傲游 (Mobile)、傲游 (PC)、华为浏览器、夸克浏览器、小白浏览器、微信 (Mobile)、微信 (PC)、搜狗浏览器 (Mobile)、搜狗浏览器 (PC)、新浪微博 (Mobile)、欧朋 (Mobile)、猎豹浏览器 (Mobile)、猎豹浏览器 (PC)、百度 (Mobile)、百度浏览器 (Mobile)、百度浏览器 (PC)、联想浏览器、钉钉 (Mobile)、Chrome、Chrome Mobile、Edge、Firefox、IE、IE Mobile、Mobile Firefox、Mobile Safari、Opera (Presto)、Opera Mini、Opera Mobile (Presto)、Safari、Webkit (Mobile)、Webkit (PC)
+> 2345 手机浏览器（Mobile）、2345 浏览器 (PC)、360 浏览器 (Mobile)、Edge (Mobile)、Edge (PC)、Electron、GreenBrowser、HeyTap浏览器、MIUI 浏览器、Opera (Blink)、Opera Mobile (Blink)、Oppo 浏览器、QQ (Mobile)、QQ 浏览器 (Mobile)、QQ 浏览器 (PC)、Qzone (Mobile)、UC 浏览器 (Mobile)、UC 浏览器 (PC)、Vivo 浏览器、uni-app、三星浏览器、世界之窗、企业微信 (Mobile)、企业微信 (PC)、傲游 (Mobile)、傲游 (PC)、华为浏览器、夸克浏览器、小白浏览器、微信 (Mobile)、微信 (PC)、搜狗浏览器 (Mobile)、搜狗浏览器 (PC)、新浪微博 (Mobile)、欧朋 (Mobile)、猎豹浏览器 (Mobile)、猎豹浏览器 (PC)、百度 (Mobile)、百度浏览器 (Mobile)、百度浏览器 (PC)、联想浏览器、钉钉 (Mobile)
+
+当无法命中以上客户端的识别规则时，将回退至浏览器识别。
 
 注意：
 
@@ -121,6 +123,18 @@ console.dir(detector.client.exec(USER_AGENT));
 - 由于荣耀手机的型号规则与华为较为相似，暂无有效方法将两者区分开，故荣耀品牌归并到华为品牌中，不做区分。
 
 ## Changelog
+
+### v2.2.0
+
+- 优化部分浏览器的识别结果名称，均增加“(PC)”后缀。包括：
+  - 猎豹浏览器 (PC)
+  - 2345 浏览器 (PC)
+  - 百度浏览器 (PC)
+- 优化 IE 浏览器的识别规则。
+- 优化 Linux 系统的识别规则。
+- 新增 DingTalkBot 爬虫的识别（位于浏览器和客户端识别模块中）。
+- 新增 FreeBSD 系统的识别。
+- 联想品牌的识别规则新增 `erazer` 关键词。
 
 ### v2.1.0
 
