@@ -14,7 +14,7 @@ const osDetector = require('../os');
  * @type {Rule[]}
  */
 exports.spiderBotRules = [
-  { name: 'Baidu Spider', keywords: ['Baiduspider'] },
+  { name: 'Baidu Spider', regExp: /\bBaiduspider\b/ },
   { name: 'Googlebot', keywords: ['Googlebot', 'AdsBot-Google-Mobile'] },
   { name: 'Bingbot', keywords: ['bingbot'] },
   { name: 'DingTalkBot', keywords: ['DingTalkBot'] },
