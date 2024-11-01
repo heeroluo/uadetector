@@ -43,7 +43,7 @@ const rules = [
   // Windows 95/98/ME
   {
     name: 'Windows',
-    regExp: /\bWindows(?:\s([\d.]+))\b/,
+    regExp: /\bWindows(?:\s([\d.]+))?\b/,
     extended: { isPC: true }
   },
 
@@ -95,8 +95,14 @@ const rules = [
   { name: 'ChromeOS', regExp: /\bCrOS\b/ },
 
   {
+    name: 'FreeBSD',
+    keywords: ['FreeBSD'],
+    extended: { isPC: true }
+  },
+
+  {
     name: 'Linux',
-    regExp: /\bLinux;?\s(?:x86|i[356]86)(?:\b|_)/,
+    keywords: ['linux'],
     extended: { isPC: true }
   }
 ];

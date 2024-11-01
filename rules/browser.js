@@ -14,13 +14,14 @@ const osDetector = require('../os');
  * @type {Rule[]}
  */
 exports.spiderBotRules = [
-  { name: 'Baidu Spider', regExp: /\bBaiduspider\b/ },
-  { name: 'Googlebot', regExp: /\b(?:Googlebot|AdsBot-Google-Mobile)\b/ },
-  { name: 'Bingbot', regExp: /\bbingbot\b/ },
+  { name: 'Baidu Spider', keywords: ['Baiduspider'] },
+  { name: 'Googlebot', keywords: ['Googlebot', 'AdsBot-Google-Mobile'] },
+  { name: 'Bingbot', keywords: ['bingbot'] },
+  { name: 'DingTalkBot', keywords: ['DingTalkBot'] },
   { name: 'SogouSpider', regExp: /\bSogou\s.*Spider\b/ },
-  { name: 'YisouSpider', regExp: /\bYisouSpider\b/ },
+  { name: 'YisouSpider', keywords: ['YisouSpider'] },
   { name: 'Sosospider', regExp: /\bSoso(?:image)?spider\b/ },
-  { name: '360Spider', regExp: /\b(?:360Spider|HaosouSpider)/i }
+  { name: '360Spider', keywords: ['360Spider', 'HaosouSpider'] }
 ];
 
 /**
@@ -36,7 +37,7 @@ exports.pcRules = [
     regExp: /\bAppleWebKit(?:[/\s]?([\d.]+))?/i
   },
   { name: 'IE', regExp: /\bMSIE\s(\d+)/i },
-  { name: 'IE', regExp: /\bTrident\/.*;\srv:(\d+)/ },
+  { name: 'IE', regExp: /\bTrident\/.*;\srv[:\s](\d+)/ },
   { name: 'Firefox', regExp: /\bFirefox\/([\d.]+)/ },
   { name: 'Opera (Presto)', regExp: /\bOpera\/([\d.]+)/ }
 ];
