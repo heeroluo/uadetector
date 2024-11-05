@@ -16,12 +16,13 @@ const osDetector = require('../os');
 exports.spiderBotRules = [
   { name: 'Baidu Spider', regExp: /\bBaiduspider\b/ },
   { name: 'Googlebot', keywords: ['Googlebot', 'AdsBot-Google-Mobile'] },
-  { name: 'Bingbot', keywords: ['bingbot'] },
+  { name: 'Bingbot', keywords: ['Bingbot'] },
   { name: 'DingTalkBot', keywords: ['DingTalkBot'] },
   { name: 'SogouSpider', regExp: /\bSogou\s.*Spider\b/ },
   { name: 'YisouSpider', keywords: ['YisouSpider'] },
   { name: 'Sosospider', regExp: /\bSoso(?:image)?spider\b/ },
-  { name: '360Spider', keywords: ['360Spider', 'HaosouSpider'] }
+  { name: '360Spider', keywords: ['360Spider', 'HaosouSpider'] },
+  { name: 'Bytespider', keywords: ['Bytespider'] }
 ];
 
 /**
