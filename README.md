@@ -102,7 +102,7 @@ console.dir(detector.client.exec(USER_AGENT));
 
 支持以下客户端的识别：
 
-> 2345 手机浏览器（Mobile）、2345 浏览器 (PC)、360 浏览器 (Mobile)、Edge (Mobile)、Edge (PC)、Electron、GreenBrowser、HeyTap浏览器、MIUI 浏览器、Opera (Blink)、Opera Mobile (Blink)、Oppo 浏览器、QQ (Mobile)、QQ 浏览器 (Mobile)、QQ 浏览器 (PC)、Qzone (Mobile)、UC 浏览器 (Mobile)、UC 浏览器 (PC)、Vivo 浏览器、uni-app、三星浏览器、世界之窗、企业微信 (Mobile)、企业微信 (PC)、傲游 (Mobile)、傲游 (PC)、华为浏览器、夸克浏览器、小白浏览器、微信 (Mobile)、微信 (PC)、搜狗浏览器 (Mobile)、搜狗浏览器 (PC)、新浪微博 (Mobile)、欧朋 (Mobile)、猎豹浏览器 (Mobile)、猎豹浏览器 (PC)、百度 (Mobile)、百度浏览器 (Mobile)、百度浏览器 (PC)、联想浏览器、钉钉 (Mobile)
+> 2345 手机浏览器（Mobile）、2345 浏览器 (PC)、360 浏览器 (Mobile)、Edge (Mobile)、Edge (PC)、Electron、GreenBrowser、HeyTap 浏览器、MIUI 浏览器、Opera (Blink)、Opera Mobile (Blink)、Oppo 浏览器、QQ (Mobile)、QQ 浏览器 (Mobile)、QQ 浏览器 (PC)、Qzone (Mobile)、UC 浏览器 (Mobile)、UC 浏览器 (PC)、Vivo 浏览器、uni-app、三星浏览器、世界之窗、企业微信 (Mobile)、企业微信 (PC)、傲游 (Mobile)、傲游 (PC)、华为浏览器、夸克浏览器、小白浏览器、微信 (Mobile)、微信 (PC)、搜狗浏览器 (Mobile)、搜狗浏览器 (PC)、新浪微博 (Mobile)、欧朋 (Mobile)、猎豹浏览器 (Mobile)、猎豹浏览器 (PC)、百度 (Mobile)、百度浏览器 (Mobile)、百度浏览器 (PC)、联想浏览器、钉钉 (Mobile)
 
 当无法命中以上客户端的识别规则时，将回退至浏览器识别。
 
@@ -127,7 +127,7 @@ console.dir(detector.client.exec(USER_AGENT));
 ### v2.4.0
 
 - 设备品牌识别优化：
-  - 兼容轻应用的 User-Agent。
+  - 优化识别设备型号的正则表达式。
   - 优化小米平板设备的识别规则。
   - 优化 Realme 平板设备的识别规则。
   - 优化三星设备的识别规则。
