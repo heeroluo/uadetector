@@ -124,6 +124,15 @@ console.dir(detector.client.exec(USER_AGENT));
 
 ## Changelog
 
+### v2.4.0
+
+- 设备品牌识别优化：
+  - 兼容轻应用的 User-Agent。
+  - 优化小米平板设备的识别规则。
+  - 优化 Realme 平板设备的识别规则。
+  - 优化三星设备的识别规则。
+  - 优化天语设备的识别规则。
+
 ### v2.3.0
 
 - 考虑到意思不明确，移除了操作系统识别中对 Darwin 的识别。
