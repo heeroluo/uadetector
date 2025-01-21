@@ -50,7 +50,7 @@ exports.mobileRules = [
   { name: 'Oppo 浏览器', regExp: /\bOppoBrowser\/([\d.]+)/ },
   { name: '三星浏览器', regExp: /\bSamsungBrowser\/([\d.]+)/ },
   { name: '夸克浏览器', regExp: /\bQuark\/([\d.]+)/ },
-  { name: 'HeyTap浏览器', regExp: /\bHeyTapBrowser\/([\d.]+)/ },
+  { name: 'HeyTap 浏览器', regExp: /\bHeyTapBrowser\/([\d.]+)/ },
   { name: '百度 (Mobile)', regExp: /\bbaiduboxapp\b\/([\d.]+)?/i },
   { name: '百度 (Mobile)', regExp: /\bbaiduboxpad\b/i },
   { name: '百度浏览器 (Mobile)', regExp: /\b(?:baidubrowser|bdbrowser_i18n)\/([\d.]+)?/ },
