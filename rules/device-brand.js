@@ -66,6 +66,7 @@ exports.otherRules = [
   { name: 'TCL', keywords: ['tcl'] },
   { name: '中兴', keywords: ['zte'] },
   { name: '传音', keywords: ['infinix', 'tecno'] },
+  { name: '小课屏', keywords: ['funbook'] },
   { name: '比亚迪', keywords: ['byd auto'] },
 
   // 特定型号
@@ -73,6 +74,8 @@ exports.otherRules = [
   { name: '魅族', keywords: ['M3 Max', 'm1 metal'] },
   { name: '魅族', modelRegExp: 'M040' },
   { name: 'OPPO', modelRegExp: /^R7(?:Plust|s?Plus|Plusm|sf|t|c)/ },
+  { name: '小课屏', keywords: ['A127CS'] },
+  { name: '小课屏', modelRegExp: /^21A[89]00$/ },
 
   // 品牌型号规则
   { name: '华为', modelRegExp: /^Mate\s*\d{2}/i },
@@ -118,6 +121,7 @@ exports.otherRules = [
   { name: '海信', modelRegExp: /^H(?:ITV|LTEM?|NR)\d+/ },
   { name: '小度', modelRegExp: /^(?:XD|XDH)-/ },
   { name: '中兴', modelRegExp: /^NX\d{2,}[A-Z]?(\b|_)/ },
+  { name: '中兴', modelRegExp: /^W20\dDS$/ },
   { name: '美图', modelRegExp: /^MP\d+$/ },
   { name: '锤子', modelRegExp: /^(SM|YQ|OS|OD|OE|OC|DE)\d{3}$/ },
   { name: '锤子', modelRegExp: /^DT\d{4}[A-Z]$/ },

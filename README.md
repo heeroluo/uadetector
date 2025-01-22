@@ -132,6 +132,8 @@ console.dir(detector.client.exec(USER_AGENT));
   - 优化 Realme 平板设备的识别规则。
   - 优化三星设备的识别规则。
   - 优化天语设备的识别规则。
+  - 优化中兴设备的识别规则。
+  - 新增「小课屏」品牌的识别。
   - 优化识别结果名称：「HeyTap浏览器」 -> 「HeyTap 浏览器」。
 
 ### v2.3.0
