@@ -105,7 +105,7 @@ exports.otherRules = [
   { name: '三星', modelRegExp: /^GT[-_][A-Z][A-Z0-9]{3,}$/i },
   { name: 'Realme', modelRegExp: /^RM[XP]\d{4}$/ },
   { name: '酷派', modelRegExp: /^(?:ORL|CHA|BOS|VCR)-[A-Z]0$/i },
-  { name: '酷比', modelRegExp: /^iplay_?\d+/i },
+  { name: '酷比魔方', modelRegExp: /^iplay_?\d+/i },
   { name: '索尼', modelRegExp: /^(?:XQ|SO)-/ },
   { name: '索尼', modelRegExp: /^[A-Z]?\d{3}SO$/ },
   { name: '索尼', modelRegExp: /^SO[VG]\d{2}$/ },
