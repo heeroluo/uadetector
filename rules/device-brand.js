@@ -76,6 +76,7 @@ exports.otherRules = [
   { name: 'OPPO', modelRegExp: /^R7(?:Plust|s?Plus|Plusm|sf|t|c)/ },
   { name: '小课屏', keywords: ['A127CS'] },
   { name: '小课屏', modelRegExp: /^21A[89]00$/ },
+  { name: '华硕', modelRegExp: /^apad\d{2}[A-Z]{2}/ },
 
   // 品牌型号规则
   { name: '华为', modelRegExp: /^Mate\s*\d{2}/i },
