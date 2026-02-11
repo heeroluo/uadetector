@@ -126,8 +126,10 @@ console.dir(detector.client.exec(USER_AGENT));
 
 ### v2.6.0
 
+- 修复部分版本号丢失的问题。
 - 优化匹配设备型号的正则表达式。
 - 区分「酷比」和「酷比魔方」。
+- 新增华硕 adol 平板电脑的识别规则。
 
 ### v2.5.0
 
@@ -136,7 +138,7 @@ console.dir(detector.client.exec(USER_AGENT));
   - 优化华为 MatePad 平板的识别规则。
   - 优化华为手机的识别规则。
   - 优化 OPPO 手机的识别规则。
-  - 增加联想 Lecoo 子品牌的识别规则。
+  - 新增联想 Lecoo 子品牌的识别规则。
   - 优化小辣椒、酷派手机的识别规则。
   - 新增「迪美」品牌的识别。
 
